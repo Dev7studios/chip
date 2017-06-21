@@ -1,6 +1,6 @@
 {
   "name": "saas-billing",
-  "description": "A set of components for creating a billing UI using Stripe",
+  "description": "A set of components for creating a billing UI powered by Stripe",
   "version": "1.0.0",
   "author": "Gilbert Pellegrom <gilbert@pellegrom.me>",
   "scripts": {
