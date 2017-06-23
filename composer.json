@@ -14,6 +14,7 @@
     "autoload": {
         "psr-4": {
             "SaaSBilling\\": "src/php",
+            "SaaSBilling\\Laravel\\": "src/laravel"
         }
     }
 }
