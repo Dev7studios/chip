@@ -3,6 +3,8 @@
   "description": "A set of components for creating a billing UI powered by Stripe",
   "version": "1.0.0",
   "author": "Gilbert Pellegrom <gilbert@pellegrom.me>",
+  "main": "dist/SaaSBilling.js",
+  "module": "src/js/lib.js",
   "scripts": {
     "lib:dev": "cross-env NODE_ENV=development webpack --config build/webpack.lib.js --watch --progress --hide-modules",
     "lib:build": "cross-env NODE_ENV=production webpack --config build/webpack.lib.js --progress --hide-modules",

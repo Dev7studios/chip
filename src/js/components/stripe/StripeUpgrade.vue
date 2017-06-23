@@ -1,6 +1,6 @@
 <template>
 	<form :action="action" method="post">
-		<input type="hidden" name="_token" v-model="formData.csrfToken">
+		<input type="hidden" name="_token" v-model="formData.csrf_token">
 		<input type="hidden" name="plan_id" v-model="plan.id" v-if="plan">
 
 		<input type="hidden" name="stripeToken" v-model="stripeToken">

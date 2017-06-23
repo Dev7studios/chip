@@ -1,10 +1,10 @@
 export default {
 	"routes": {
-		"cancel_subscription": "/subscription/cancel",
-		"resume_subscription": "/subscription/resume",
-		"change_plan": "/subscription/change",
-		"form_post_subscribe": "/subscription",
-		"form_post_update": "/subscription/update"
+		"cancel_subscription": "/billing/cancel",
+		"resume_subscription": "/billing/resume",
+		"change_plan": "/billing/change",
+		"form_post_subscribe": "/billing",
+		"form_post_update": "/billing/update"
 	},
 	"stripe_form": {
 		"stripe_key": "",

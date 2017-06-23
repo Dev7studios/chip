@@ -35,10 +35,6 @@
 						</div>
 					</td>
 					<td class="text-right">
-						<a :href="routes.cancel_subscription" class="btn btn-danger"
-								v-if="showCancelButton(plan.id)"
-								@click="confirmCancel">Cancel Subscription</a>
-
 						<a :href="routes.change_plan + '?plan_id=' + plan.id" class="btn"
 								:class="[isCurrentPlan(plan.id) ? 'btn-default' : 'btn-primary']"
 								:disabled="isCurrentPlan(plan.id)"
@@ -53,6 +49,10 @@
 				</tr>
 				</tbody>
 			</table>
+
+			<a :href="routes.cancel_subscription" class="btn btn-danger cancel-btn"
+					v-if="showCancelButton()"
+					@click="confirmCancel">Cancel Subscription</a>
 
 			<div class="alert alert-info coupon-alert" v-if="coupon">
 				* price before coupon is applied
@@ -78,6 +78,9 @@
 	}
 	.resume-alert {
 		margin-bottom: 0;
+	}
+	.plan-and-pricing-panel .cancel-btn {
+		margin-top: 20px;
 	}
 	.coupon-alert {
 		margin-top: 20px;
@@ -151,7 +154,16 @@
 			}
 		},
 
+		mounted() {
+			this.setActivePlan();
+		},
+
 		methods: {
+			setActivePlan() {
+				if (this.hasSubscription && this.plans.length) {
+					this.activePlan = _.find(this.plans, { 'id': this.subscription.stripe_plan });
+				}
+			},
 			isCurrentPlan(planId) {
 				if (!this.hasSubscription && !planId) {
 					// Free plan
@@ -161,12 +173,12 @@
 				return this.hasSubscription && this.subscription.stripe_plan == planId;
 			},
 
-			showCancelButton(planId) {
+			showCancelButton() {
 				if (!this.hasSubscription) {
 					return false;
 				}
 
-				return !this.subscription.cancelled && !planId;
+				return !this.subscription.cancelled;
 			},
 			confirmCancel(e) {
 				if (!confirm('Are you sure you want to cancel your subscription?')) {
@@ -202,9 +214,7 @@
 
 		watch: {
 			subscription() {
-				if (this.hasSubscription) {
-					this.activePlan = _.find(this.plans, { 'id': this.subscription.stripe_plan });
-				}
+				this.setActivePlan();
 			}
 		},
 
