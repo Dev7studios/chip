@@ -1,0 +1,19 @@
+{
+    "name": "Dev7studios/saas-billing",
+    "description": "A set of components for creating a billing UI powered by Stripe",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Gilbert Pellegrom",
+            "email": "gilbert@pellegrom.me"
+        }
+    ],
+    "require": {
+        "stripe/stripe-php": "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SaaSBilling\\": "src/php",
+        }
+    }
+}
