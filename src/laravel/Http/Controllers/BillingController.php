@@ -2,6 +2,7 @@
 
 namespace SaaSBilling\Laravel\Http\Controllers;
 
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use SaaSBilling\Laravel\Events\SubscriptionCancelled;
@@ -12,15 +13,28 @@ use SaaSBilling\Laravel\Events\SubscriptionResumed;
 
 class BillingController extends BaseController
 {
+    use ValidatesRequests;
+
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    /**
+     * Create a subscription for a user
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function subscribe(Request $request)
     {
+        $this->validate($request, ['stripeToken' => 'required|string']);
+
         $planId = $request->get('plan_id');
-        $plan   = $this->getPlan($planId);
+        if (!$planId) {
+            abort(404, 'Invalid plan_id');
+        }
+        $plan = $this->getPlan($planId);
         if (!$plan) {
             abort(404, 'Invalid plan');
         }
@@ -50,11 +64,21 @@ class BillingController extends BaseController
 
         event(new SubscriptionCreated($user, $plan['id']));
 
-        return redirect(config('saas-billing.billing_route'));
+        return redirect(config('saas-billing.billing_route'))->with([
+            'success' => 'Successfully subscribed.',
+        ]);
     }
 
+    /**
+     * Update a users payment information
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(Request $request)
     {
+        $this->validate($request, ['stripeToken' => 'required|string']);
+
         $user = $request->user();
 
         $user->updateCard($request->get('stripeToken'));
@@ -69,9 +93,17 @@ class BillingController extends BaseController
 
         event(new SubscriptionCardUpdated($user));
 
-        return redirect(config('saas-billing.billing_route'));
+        return redirect(config('saas-billing.billing_route'))->with([
+            'success' => 'Payment information successfully updated.',
+        ]);
     }
 
+    /**
+     * Change a subscriptions plan
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function change(Request $request)
     {
         $planId = $request->get('plan_id');
@@ -92,9 +124,17 @@ class BillingController extends BaseController
 
         event(new SubscriptionChanged($user, $plan['id']));
 
-        return redirect(config('saas-billing.billing_route'));
+        return redirect(config('saas-billing.billing_route'))->with([
+            'success' => 'Plan successfully changed.',
+        ]);
     }
 
+    /**
+     * Cancel a subscription
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function cancel(Request $request)
     {
         $user = $request->user();
@@ -103,9 +143,17 @@ class BillingController extends BaseController
 
         event(new SubscriptionCancelled($user));
 
-        return redirect(config('saas-billing.billing_route'));
+        return redirect(config('saas-billing.billing_route'))->with([
+            'success' => 'Subscription cancelled.',
+        ]);
     }
 
+    /**
+     * Resume a subscription
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function resume(Request $request)
     {
         $user = $request->user();
@@ -114,7 +162,9 @@ class BillingController extends BaseController
 
         event(new SubscriptionResumed($user));
 
-        return redirect(config('saas-billing.billing_route'));
+        return redirect(config('saas-billing.billing_route'))->with([
+            'success' => 'Subscription resumed.',
+        ]);
     }
 
     /**

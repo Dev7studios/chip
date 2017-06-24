@@ -22,7 +22,7 @@ class SaaSBillingServiceProvider extends ServiceProvider
     }
 
     /**
-     * Define the Spark routes.
+     * Define the routes.
      *
      * @return void
      */
@@ -40,6 +40,11 @@ class SaaSBillingServiceProvider extends ServiceProvider
         }
     }
 
+    /**
+     * Publish the config.
+     *
+     * @return void
+     */
     protected function publishConfig()
     {
         $this->publishes([
@@ -47,6 +52,11 @@ class SaaSBillingServiceProvider extends ServiceProvider
         ]);
     }
 
+    /**
+     * Publish the assets.
+     *
+     * @return void
+     */
     protected function publishAssets()
     {
         $this->publishes([

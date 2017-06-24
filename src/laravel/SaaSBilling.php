@@ -5,6 +5,8 @@ namespace SaaSBilling\Laravel;
 class SaaSBilling
 {
     /**
+     * Get the billing data required for the SaaS Billing components
+     *
      * @param mixed $billable
      * @param string $coupon
      * @return array
