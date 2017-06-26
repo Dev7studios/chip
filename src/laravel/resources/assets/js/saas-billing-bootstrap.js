@@ -1,0 +1,1 @@
+Vue.component('billing', require('./components/Billing.vue'));

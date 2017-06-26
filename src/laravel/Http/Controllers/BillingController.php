@@ -10,6 +10,7 @@ use SaaSBilling\Laravel\Events\SubscriptionCardUpdated;
 use SaaSBilling\Laravel\Events\SubscriptionChanged;
 use SaaSBilling\Laravel\Events\SubscriptionCreated;
 use SaaSBilling\Laravel\Events\SubscriptionResumed;
+use SaaSBilling\Laravel\SaaSBilling;
 
 class BillingController extends BaseController
 {
@@ -18,6 +19,19 @@ class BillingController extends BaseController
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    /**
+     * Show the billing page
+     *
+     * @param Request $request
+     * @return $this
+     */
+    public function index(Request $request)
+    {
+        return view('saas-billing::billing')->with([
+            'billing_data' => SaaSBilling::getBillingData($request->user(), $request->get('coupon')),
+        ]);
     }
 
     /**

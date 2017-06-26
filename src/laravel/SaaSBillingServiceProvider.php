@@ -15,9 +15,10 @@ class SaaSBillingServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->defineRoutes();
+        $this->loadViews();
 
         $this->publishConfig();
-
+        $this->publishViews();
         $this->publishAssets();
     }
 
@@ -41,6 +42,16 @@ class SaaSBillingServiceProvider extends ServiceProvider
     }
 
     /**
+     * Load the views.
+     *
+     * @return void
+     */
+    protected function loadViews()
+    {
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'saas-billing');
+    }
+
+    /**
      * Publish the config.
      *
      * @return void
@@ -49,7 +60,19 @@ class SaaSBillingServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/config/saas-billing.php' => config_path('saas-billing.php'),
-        ]);
+        ], 'saas-billing');
+    }
+
+    /**
+     * Publish the views.
+     *
+     * @return void
+     */
+    protected function publishViews()
+    {
+        $this->publishes([
+            __DIR__ . '/resources/views' => resource_path('views/vendor/saas-billing'),
+        ], 'saas-billing-views');
     }
 
     /**
@@ -60,7 +83,7 @@ class SaaSBillingServiceProvider extends ServiceProvider
     protected function publishAssets()
     {
         $this->publishes([
-            __DIR__ . '/../js/components' => resource_path('vendor/saas-billing/components'),
+            __DIR__ . '/../js/components' => resource_path('assets/js/vendor/saas-billing'),
         ], 'saas-billing-components');
     }
 

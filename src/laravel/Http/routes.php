@@ -1,6 +1,8 @@
 <?php
 
 $router->group(['middleware' => 'web'], function ($router) {
+    $router->get('/billing', 'BillingController@index')->name('billing');
+
     $router->post('/billing', 'BillingController@subscribe')->name('billing-subscribe');
     $router->post('/billing/update', 'BillingController@update')->name('billing-update');
 
