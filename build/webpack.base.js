@@ -1,3 +1,4 @@
+var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
@@ -34,7 +35,8 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			'vue$': 'vue/dist/vue.esm.js'
+			'vue$': 'vue/dist/vue.esm.js',
+			'@': path.resolve(__dirname, '../src/js')
 		}
 	},
 	devtool: '#eval-source-map'
