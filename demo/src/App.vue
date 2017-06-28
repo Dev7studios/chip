@@ -41,7 +41,6 @@
 
 <script>
 	import _ from 'lodash';
-	import { PlanAndPricing, PaymentInfo, PaymentHistory } from '../../dist/StripeVueComponents';
 	import billingInfo from './data';
 
 	export default {
@@ -112,12 +111,6 @@
 					link: '/invoice/1234'
 				}];
 			},
-		},
-
-		components: {
-			'plan-and-pricing': PlanAndPricing,
-			'payment-info': PaymentInfo,
-			'payment-history': PaymentHistory,
 		}
 	}
 </script>

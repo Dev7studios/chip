@@ -15,19 +15,11 @@
 </template>
 
 <script>
-	import {PlanAndPricing, PaymentInfo, PaymentHistory} from 'saas-billing';
-
 	export default {
 		data () {
 			return {
 				billingData: billingData,
 			}
-		},
-
-		components: {
-			'plan-and-pricing': PlanAndPricing,
-			'payment-info': PaymentInfo,
-			'payment-history': PaymentHistory,
 		}
 	}
 </script>
