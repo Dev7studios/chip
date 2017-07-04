@@ -78,7 +78,7 @@ class BillingController extends BaseController
 
         event(new SubscriptionCreated($user, $plan['id']));
 
-        return redirect(config('saas-billing.billing_route'))->with([
+        return redirect()->route('billing')->with([
             'success' => 'Successfully subscribed.',
         ]);
     }
@@ -107,7 +107,7 @@ class BillingController extends BaseController
 
         event(new SubscriptionCardUpdated($user));
 
-        return redirect(config('saas-billing.billing_route'))->with([
+        return redirect()->route('billing')->with([
             'success' => 'Payment information successfully updated.',
         ]);
     }
@@ -138,7 +138,7 @@ class BillingController extends BaseController
 
         event(new SubscriptionChanged($user, $plan['id']));
 
-        return redirect(config('saas-billing.billing_route'))->with([
+        return redirect()->route('billing')->with([
             'success' => 'Plan successfully changed.',
         ]);
     }
@@ -157,7 +157,7 @@ class BillingController extends BaseController
 
         event(new SubscriptionCancelled($user));
 
-        return redirect(config('saas-billing.billing_route'))->with([
+        return redirect()->route('billing')->with([
             'success' => 'Subscription cancelled.',
         ]);
     }
@@ -176,7 +176,7 @@ class BillingController extends BaseController
 
         event(new SubscriptionResumed($user));
 
-        return redirect(config('saas-billing.billing_route'))->with([
+        return redirect()->route('billing')->with([
             'success' => 'Subscription resumed.',
         ]);
     }

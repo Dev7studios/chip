@@ -1,12 +1,14 @@
 <?php
 
 $router->group(['middleware' => 'web'], function ($router) {
-    $router->get('/billing', 'BillingController@index')->name('billing');
+	$baseRoute = config('saas-billing.billing_route');
 
-    $router->post('/billing', 'BillingController@subscribe')->name('billing-subscribe');
-    $router->post('/billing/update', 'BillingController@update')->name('billing-update');
+	$router->get($baseRoute, 'BillingController@index')->name('billing');
 
-    $router->get('/billing/change', 'BillingController@change')->name('billing-change');
-    $router->get('/billing/cancel', 'BillingController@cancel')->name('billing-cancel');
-    $router->get('/billing/resume', 'BillingController@resume')->name('billing-resume');
+	$router->post($baseRoute, 'BillingController@subscribe')->name('billing-subscribe');
+	$router->post($baseRoute . '/update', 'BillingController@update')->name('billing-update');
+
+	$router->get($baseRoute . '/change', 'BillingController@change')->name('billing-change');
+	$router->get($baseRoute . '/cancel', 'BillingController@cancel')->name('billing-cancel');
+	$router->get($baseRoute . '/resume', 'BillingController@resume')->name('billing-resume');
 });
