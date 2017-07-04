@@ -138,6 +138,16 @@
 			hasSubscription() {
 				return !_.isEmpty(this.subscription);
 			},
+			hasActiveSubscription() {
+				return this.hasSubscription && !this.subscriptionIsExpired;
+			},
+			subscriptionIsExpired() {
+				if (!this.hasSubscription) {
+					return false;
+				}
+
+				return this.subscription.cancelled && !this.subscription.on_grace_period;
+			},
 			showResumeAlert() {
 				if (!this.hasSubscription) {
 					return false;
@@ -150,7 +160,7 @@
 					return true;
 				}
 
-				return !this.subscription.cancelled;
+				return !this.subscription.cancelled || this.subscriptionIsExpired;
 			}
 		},
 
@@ -187,7 +197,7 @@
 			},
 
 			showChangeButton(planId) {
-				return this.hasSubscription && planId;
+				return this.hasActiveSubscription && planId;
 			},
 			changeButtonText(planId) {
 				if (this.isCurrentPlan(planId)) {
@@ -208,7 +218,7 @@
 			},
 
 			showUpgradeButton(planId) {
-				return !this.hasSubscription;
+				return !this.hasActiveSubscription && planId;
 			}
 		},
 

@@ -2,7 +2,7 @@
 	<div class="panel panel-default payment-info-panel">
 		<div class="panel-heading">Payment Information</div>
 		<div class="panel-body">
-			<div v-if="paymentInfo.card_brand">
+			<div v-if="hasPaymentInfo">
 				<div class="pull-right">
 					<stripe-upgrade :form-data="stripeForm" :action="routes.form_post_update" text="Update Details"></stripe-upgrade>
 				</div>
@@ -54,6 +54,9 @@
 		},
 
 		computed: {
+			hasPaymentInfo() {
+				return this.paymentInfo.card_brand;
+			},
 			billingAddress() {
 				var address = '';
 

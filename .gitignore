@@ -3,6 +3,7 @@
 /node_modules
 /demo/dist
 /vendor
+/test/unit/coverage
 composer.lock
 npm-debug.log
 yarn-error.log
