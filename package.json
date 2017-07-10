@@ -10,8 +10,8 @@
     "lib:build": "cross-env NODE_ENV=production webpack --config build/webpack.lib.js --progress --hide-modules",
     "demo:dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js --open --hot",
     "demo:build": "cross-env NODE_ENV=production webpack --config build/webpack.demo.js --progress --hide-modules",
-    "unit:dev": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js",
-    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "unit:dev": "cross-env BABEL_ENV=test karma start tests/js/unit/karma.conf.js",
+    "unit": "cross-env BABEL_ENV=test karma start tests/js/unit/karma.conf.js --single-run",
     "test": "npm run unit"
   },
   "dependencies": {
