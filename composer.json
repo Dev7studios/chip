@@ -11,10 +11,21 @@
     "require": {
         "stripe/stripe-php": "4.*"
     },
+    "require-dev": {
+        "laravel/framework": "^5.4",
+        "laravel/cashier": "^7.0",
+        "phpunit/phpunit": "^6.2",
+        "orchestra/testbench": "~3.4"
+    },
     "autoload": {
         "psr-4": {
             "SaaSBilling\\": "src/php",
             "SaaSBilling\\Laravel\\": "src/laravel"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Laravel\\": "tests/laravel/"
         }
     }
 }
