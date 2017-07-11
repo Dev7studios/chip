@@ -1,5 +1,5 @@
 .DS_Store
-/.idea
+/_book
 /node_modules
 /demo/dist
 /vendor
