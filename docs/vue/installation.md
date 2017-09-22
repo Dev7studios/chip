@@ -75,5 +75,4 @@ Finally include the components in your app:
 
 Once you have set up the components you need to hook them up to a back-end processor (via the routes defined in the [data structure](../misc/data-structure.md)). We provide the following integrations with this package:
 
-* PHP
 * [Laravel](../laravel/installation.md)

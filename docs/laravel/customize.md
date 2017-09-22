@@ -34,7 +34,7 @@ This will make the components available in `resources/assets/js/vendor/saas-bill
 
 ## Events
 
-There are several events that SaaS Billing triggers at different points in the subscription flow. You can create [Laravel Listeners](https://laravel.com/docs/5.4/events#defining-listeners) to trigger custom functionality when these events are fired.
+There are several events that SaaS Billing triggers at different points in the subscription flow. You can create [Laravel Listeners](https://laravel.com/docs/5.5/events#defining-listeners) to trigger custom functionality when these events are fired.
 
 * `SaaSBilling\Laravel\Events\SubscriptionCreated` - When a subscription is created
 * `SaaSBilling\Laravel\Events\SubscriptionCardUpdated` - When the payment info is updated
@@ -43,4 +43,4 @@ There are several events that SaaS Billing triggers at different points in the s
 * `SaaSBilling\Laravel\Events\SubscriptionResumed` - When a subscription is resumed
 * `SaaSBilling\Laravel\Events\SubscriptionDeleted` - When a subscription is expired (at the end of the grace period, see below)
 
-For the `SubscriptionDeleted` event to work, you must use our provided `SaaSBilling\Laravel\Http\Controllers\StripeWebhookController` **instead** of the one provided by [Laravel Cashier](https://laravel.com/docs/5.4/billing#handling-stripe-webhooks).
+For the `SubscriptionDeleted` event to work, you must use our provided `SaaSBilling\Laravel\Http\Controllers\StripeWebhookController` **instead** of the one provided by [Laravel Cashier](https://laravel.com/docs/5.5/billing#handling-stripe-webhooks).

@@ -6,16 +6,48 @@ and is compatible with Bootstrap styles. All of this can be [customized](/larave
 
 ## 1. Setup Laravel
 
-1. Create a [Laravel application](https://laravel.com/docs/5.4/installation)
-1. Install Laravel [Cashier](https://laravel.com/docs/5.4/billing) and configure for Stripe
+1. Create a [Laravel application](https://laravel.com/docs/5.5/installation)
+1. Install Laravel [Cashier](https://laravel.com/docs/5.5/billing) and configure for Stripe
 
 ## 2. Install SaaS Billing (back-end)
 
-Run the following command in your Laravel app to install the SaaS Billing package via composer.
+To install the package via composer you need to add it as a custom package via the Composer `repositories` directive in your `composer.json`:
 
+```json
+"repositories": [
+  {
+    "type": "package",
+    "package": {
+      "name": "Dev7studios/saas-billing",
+      "version": "0.1.0",
+      "source": {
+        "url": "git@github.com:/Dev7studios/saas-billing.git",
+        "type": "git",
+        "reference": "master"
+      },
+      "autoload": {
+        "psr-4": {
+          "SaaSBilling\\": "src/php",
+          "SaaSBilling\\Laravel\\": "src/laravel"
+        }
+      }
+    }
+  }
+],
 ```
-composer require Dev7studios/saas-billing
+
+Then you can add the package to the `require` section of your `composer.json`
+
+```json
+"require": {
+    ...
+    "Dev7studios/saas-billing": "*"
+},
 ```
+
+Then run `composer update`. Note that to update the package you need to update the version in the `package` definition and not in the `require` section.
+
+### Config
 
 Open `config/app.php` and add the the service provider to the list of `providers`:
 
