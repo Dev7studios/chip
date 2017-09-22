@@ -10,10 +10,10 @@
         }
     ],
     "require": {
-        "stripe/stripe-php": "4.*"
+        "stripe/stripe-php": "5.*"
     },
     "require-dev": {
-        "laravel/framework": "^5.4",
+        "laravel/framework": "^5.5",
         "laravel/cashier": "^7.0",
         "phpunit/phpunit": "^6.2",
         "orchestra/testbench": "~3.4"
