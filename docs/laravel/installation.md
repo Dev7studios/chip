@@ -19,7 +19,7 @@ To install the package via composer you need to add it as a custom package via t
     "type": "package",
     "package": {
       "name": "gilbitron/saas-billing",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "source": {
         "url": "git@github.com:/gilbitron/saas-billing.git",
         "type": "git",
@@ -27,7 +27,6 @@ To install the package via composer you need to add it as a custom package via t
       },
       "autoload": {
         "psr-4": {
-          "SaaSBilling\\": "src/php",
           "SaaSBilling\\Laravel\\": "src/laravel"
         }
       }
@@ -99,6 +98,15 @@ const app = new Vue({
     el: '#app'
 });
 ```
+
+Then run `npm run dev` to re-compile your assets.
+
+Finally you need to edit the `resources/views/layouts/app.blade.php` file to add a `yield` directive before the closing `</head>` tag:
+
+```html
+    @yield('scripts-head')
+</head>
+``` 
 
 ## 3. Finished!
 
