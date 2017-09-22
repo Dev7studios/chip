@@ -18,10 +18,10 @@ To install the package via composer you need to add it as a custom package via t
   {
     "type": "package",
     "package": {
-      "name": "Dev7studios/saas-billing",
+      "name": "gilbitron/saas-billing",
       "version": "0.1.0",
       "source": {
-        "url": "git@github.com:/Dev7studios/saas-billing.git",
+        "url": "git@github.com:/gilbitron/saas-billing.git",
         "type": "git",
         "reference": "master"
       },
@@ -41,7 +41,7 @@ Then you can add the package to the `require` section of your `composer.json`
 ```json
 "require": {
     ...
-    "Dev7studios/saas-billing": "*"
+    "gilbitron/saas-billing": "*"
 },
 ```
 
@@ -80,8 +80,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .webpackConfig({
         resolve: {
             modules: [
-                path.resolve(__dirname, 'vendor/Dev7studios/saas-billing/dist'),
-                path.resolve(__dirname, 'vendor/Dev7studios/saas-billing/src/laravel/resources/assets/js'),
+                path.resolve(__dirname, 'vendor/gilbitron/saas-billing/dist'),
+                path.resolve(__dirname, 'vendor/gilbitron/saas-billing/src/laravel/resources/assets/js'),
                 'node_modules'
             ]
         }
