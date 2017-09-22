@@ -2,6 +2,7 @@
     "name": "gilbitron/saas-billing",
     "description": "A set of components for creating a billing UI powered by Stripe",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Gilbert Pellegrom",
