@@ -1,5 +1,5 @@
 {
-    "name": "Dev7studios/saas-billing",
+    "name": "gilbitron/saas-billing",
     "description": "A set of components for creating a billing UI powered by Stripe",
     "type": "library",
     "authors": [
