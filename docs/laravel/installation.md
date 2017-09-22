@@ -11,40 +11,11 @@ and is compatible with Bootstrap styles. All of this can be [customized](/larave
 
 ## 2. Install SaaS Billing (back-end)
 
-To install the package via composer you need to add it as a custom package via the Composer `repositories` directive in your `composer.json`:
+To install the package via composer simply run:
 
-```json
-"repositories": [
-  {
-    "type": "package",
-    "package": {
-      "name": "gilbitron/saas-billing",
-      "version": "1.0.0",
-      "source": {
-        "url": "git@github.com:/gilbitron/saas-billing.git",
-        "type": "git",
-        "reference": "master"
-      },
-      "autoload": {
-        "psr-4": {
-          "SaaSBilling\\Laravel\\": "src/laravel"
-        }
-      }
-    }
-  }
-],
 ```
-
-Then you can add the package to the `require` section of your `composer.json`
-
-```json
-"require": {
-    ...
-    "gilbitron/saas-billing": "*"
-},
+composer require gilbitron/saas-billing
 ```
-
-Then run `composer update`. Note that to update the package you need to update the version in the `package` definition and not in the `require` section.
 
 ### Config
 
