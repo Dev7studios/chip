@@ -7,6 +7,12 @@ SaaS Billing is a set of components that help you to create a simple and elegant
 * Out-of-the-box integration with [Laravel](https://laravel.com/)
 * [Bootstrap](http://getbootstrap.com/) compatible styling out of the box
 
+## Demo
+
+Video demo:
+
+[![SaaS Billing Demo](http://img.youtube.com/vi/lTiYD7hLNv0/maxresdefault.jpg)](https://youtu.be/lTiYD7hLNv0)
+
 ## Docs
 
 To get started head on over to [our docs](https://gilbitron.gitbooks.io/saas-billing/).
