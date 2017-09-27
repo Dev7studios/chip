@@ -31,4 +31,4 @@ and only submit **1 feature/fix per pull request**. Pull requests containing mul
 ## Credits
 
 SaaS Billing was created by [Gilbert Pellegrom](https://gilbitron.me) from
-[Dev7studios](https://dev7studios.co). Released under the MIT license.
+[Dev7studios](https://dev7studios.co). Released under the GPLv3 license.

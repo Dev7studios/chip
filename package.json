@@ -3,6 +3,7 @@
   "description": "A set of components for creating a billing UI powered by Stripe",
   "version": "1.0.0",
   "author": "Gilbert Pellegrom <gilbert@pellegrom.me>",
+  "license" : "GPL-3.0",
   "main": "dist/saas-billing.js",
   "module": "src/js/lib.js",
   "scripts": {
