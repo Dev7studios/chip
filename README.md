@@ -17,16 +17,17 @@ Video demo:
 
 To get started head on over to [our docs](https://gilbitron.gitbooks.io/saas-billing/).
 
-## Contribute
+## Licensing
 
-So you want to help out? That's awesome. Here is how you can do it:
+### Open Source License
 
-* [Report a bug](https://github.com/gilbitron/saas-billing/issues)
-* [Ask for a feature](https://github.com/gilbitron/saas-billing/issues)
-* [Submit a pull request](https://github.com/gilbitron/saas-billing/pulls)
+If you are creating an open source application under a license compatible with the GNU GPL license v3, you may use SaaS Billing under the terms of the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-If you are submitting a pull request please adhere to the existing coding standards used throughout the code
-and only submit **1 feature/fix per pull request**. Pull requests containing multiple changes will be rejected.
+### Commercial License
+
+If you want to use SaaS Billing to develop commercial sites, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. Purchase a SaaS Billing Commercial License at [saasbilling.io](https://saasbilling.io/).
+
+[Read more about SaaS Billing licensing](https://gilbitron.gitbooks.io/saas-billing/licensing.html)
 
 ## Credits
 
