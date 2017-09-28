@@ -3,6 +3,7 @@
 ## Introduction
 
 * [Introduction](README.md)
+* [Licensing](licensing.md)
 
 ## Vue
 
