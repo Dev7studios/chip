@@ -1,6 +1,6 @@
 {
     "name": "Dev7studios/chip",
-    "description": "A simple set of components for creating billing UI powered by Stripe",
+    "description": "Drop-in subscription billing UI for Laravel",
     "type": "library",
     "license": "GPL-3.0",
     "authors": [

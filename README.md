@@ -2,7 +2,7 @@
 
 Chip was created to be a lightweight alternative to [Laravel Spark](https://spark.laravel.com/). It is a drop-in subscription billing UI powered by Stripe and Vue.js components. It allows you to focus your time and energy on building your SaaS app rather than worrying about the complexities of the billing system.
 
-* Drop-in subscription billing for [Laravel](https://laravel.com/)
+* Drop-in subscription billing UI for [Laravel](https://laravel.com/)
 * Front-end components powered by [Vue.js](https://vuejs.org/)
 * Uses [Stripe Checkout](https://stripe.com/checkout) for a world-class payment flow
 * [Bootstrap](http://getbootstrap.com/) compatible styling out of the box

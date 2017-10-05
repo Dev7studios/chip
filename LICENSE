@@ -1,4 +1,4 @@
-Chip - A simple set of components for creating billing UI powered by Stripe
+Chip - Drop-in subscription billing UI for Laravel
 Copyright (C) 2017 Dev7studios Ltd
 
 This program is free software: you can redistribute it and/or modify
