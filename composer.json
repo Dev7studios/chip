@@ -1,5 +1,5 @@
 {
-    "name": "Dev7studios/chip",
+    "name": "dev7studios/chip",
     "description": "Drop-in subscription billing UI for Laravel",
     "type": "library",
     "license": "GPL-3.0",
