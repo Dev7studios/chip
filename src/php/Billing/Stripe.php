@@ -1,9 +1,9 @@
 <?php
 
-namespace SaaSBilling\Billing;
+namespace Dev7studios\Chip\Billing;
 
 use Stripe as StripeLib;
-use SaaSBilling\Interfaces\Billable;
+use Dev7studios\Chip\Interfaces\Billable;
 
 class Stripe implements Billable
 {

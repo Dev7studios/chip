@@ -2,15 +2,15 @@
 
 namespace Tests\Laravel;
 
-use SaaSBilling\Laravel\SaaSBilling;
+use Dev7studios\Chip\Laravel\Chip;
 use Tests\Laravel\Fixtures\User;
 
-class SaaSBillingTest extends TestCase
+class ChipTest extends TestCase
 {
     public function testGetBillingData()
     {
         $user        = new User();
-        $billingData = SaaSBilling::getBillingData($user);
+        $billingData = Chip::getBillingData($user);
 
         $this->assertArrayHasKey('routes', $billingData);
         $this->assertArrayHasKey('stripe_form', $billingData);

@@ -1,11 +1,11 @@
 <?php
 
-namespace SaaSBilling\Laravel;
+namespace Dev7studios\Chip\Laravel;
 
-class SaaSBilling
+class Chip
 {
     /**
-     * Get the billing data required for the SaaS Billing components
+     * Get the billing data required for the Chip components
      *
      * @param mixed $billable
      * @param string $coupon
@@ -61,7 +61,7 @@ class SaaSBilling
                 'app_name'   => config('app.name'),
                 'user_email' => $billable->email,
             ],
-            'plans'        => config('saas-billing.plans'),
+            'plans'        => config('chip.plans'),
             'subscription' => $subscription,
             'payment_info' => $paymentInfo,
             'invoices'     => $invoices,

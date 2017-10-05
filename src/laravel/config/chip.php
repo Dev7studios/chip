@@ -6,7 +6,7 @@ return [
     | Billing route
     |--------------------------------------------------------------------------
     |
-    | The route to the billing page where the SaaS Billing components are. The
+    | The route to the billing page where the Chip components are. The
     | user will be redirected here after billing actions have been completed.
     |
     */

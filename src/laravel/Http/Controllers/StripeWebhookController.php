@@ -1,8 +1,8 @@
 <?php
 
-namespace SaaSBilling\Laravel\Http\Controllers;
+namespace Dev7studios\Chip\Laravel\Http\Controllers;
 
-use SaaSBilling\Laravel\Events\SubscriptionDeleted;
+use Dev7studios\Chip\Laravel\Events\SubscriptionDeleted;
 use Laravel\Cashier\Http\Controllers\WebhookController;
 
 class StripeWebhookController extends WebhookController

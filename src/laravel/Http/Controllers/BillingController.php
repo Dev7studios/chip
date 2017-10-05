@@ -1,16 +1,16 @@
 <?php
 
-namespace SaaSBilling\Laravel\Http\Controllers;
+namespace Dev7studios\Chip\Laravel\Http\Controllers;
 
+use Dev7studios\Chip\Laravel\Chip;
+use Dev7studios\Chip\Laravel\Events\SubscriptionCancelled;
+use Dev7studios\Chip\Laravel\Events\SubscriptionCardUpdated;
+use Dev7studios\Chip\Laravel\Events\SubscriptionChanged;
+use Dev7studios\Chip\Laravel\Events\SubscriptionCreated;
+use Dev7studios\Chip\Laravel\Events\SubscriptionResumed;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use SaaSBilling\Laravel\Events\SubscriptionCancelled;
-use SaaSBilling\Laravel\Events\SubscriptionCardUpdated;
-use SaaSBilling\Laravel\Events\SubscriptionChanged;
-use SaaSBilling\Laravel\Events\SubscriptionCreated;
-use SaaSBilling\Laravel\Events\SubscriptionResumed;
-use SaaSBilling\Laravel\SaaSBilling;
 
 class BillingController extends BaseController
 {
@@ -29,8 +29,8 @@ class BillingController extends BaseController
      */
     public function index(Request $request)
     {
-        return view('saas-billing::billing')->with([
-            'billing_data' => SaaSBilling::getBillingData($request->user(), $request->get('coupon')),
+        return view('chip::billing')->with([
+            'billing_data' => Chip::getBillingData($request->user(), $request->get('coupon')),
         ]);
     }
 
@@ -189,7 +189,7 @@ class BillingController extends BaseController
      */
     protected function getPlan($planId)
     {
-        $plans = collect(config('saas-billing.plans'));
+        $plans = collect(config('chip.plans'));
 
         return $plans->first(function ($plan) use ($planId) {
             return $plan['id'] == $planId;

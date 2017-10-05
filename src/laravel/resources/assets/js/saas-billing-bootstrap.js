@@ -1,6 +1,6 @@
-import SaaSBilling from 'saas-billing';
+import Chip from 'chip';
 import Billing from './components/Billing.vue';
 
-Vue.use(SaaSBilling);
+Vue.use(Chip);
 
 Vue.component('billing', Billing);

@@ -1,6 +1,6 @@
 <?php
 
-namespace SaaSBilling\Interfaces;
+namespace Dev7studios\Chip\Interfaces;
 
 interface Billable
 {

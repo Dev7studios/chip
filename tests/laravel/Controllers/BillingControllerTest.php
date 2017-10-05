@@ -2,12 +2,12 @@
 
 namespace Tests\Laravel\Controllers;
 
+use Dev7studios\Chip\Laravel\Events\SubscriptionCancelled;
+use Dev7studios\Chip\Laravel\Events\SubscriptionCardUpdated;
+use Dev7studios\Chip\Laravel\Events\SubscriptionChanged;
+use Dev7studios\Chip\Laravel\Events\SubscriptionCreated;
+use Dev7studios\Chip\Laravel\Events\SubscriptionResumed;
 use Illuminate\Support\Facades\Event;
-use SaaSBilling\Laravel\Events\SubscriptionCancelled;
-use SaaSBilling\Laravel\Events\SubscriptionCardUpdated;
-use SaaSBilling\Laravel\Events\SubscriptionChanged;
-use SaaSBilling\Laravel\Events\SubscriptionCreated;
-use SaaSBilling\Laravel\Events\SubscriptionResumed;
 use Tests\Laravel\Fixtures\User;
 use Tests\Laravel\TestCase;
 

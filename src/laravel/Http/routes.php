@@ -1,7 +1,7 @@
 <?php
 
 $router->group(['middleware' => 'web'], function ($router) {
-	$baseRoute = config('saas-billing.billing_route');
+	$baseRoute = config('chip.billing_route');
 
 	$router->get($baseRoute, 'BillingController@index')->name('billing');
 

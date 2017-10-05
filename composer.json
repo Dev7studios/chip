@@ -1,6 +1,6 @@
 {
-    "name": "gilbitron/saas-billing",
-    "description": "A set of components for creating a billing UI powered by Stripe",
+    "name": "Dev7studios/chip",
+    "description": "A simple set of components for creating billing UI powered by Stripe",
     "type": "library",
     "license": "GPL-3.0",
     "authors": [
@@ -20,8 +20,8 @@
     },
     "autoload": {
         "psr-4": {
-            "SaaSBilling\\": "src/php",
-            "SaaSBilling\\Laravel\\": "src/laravel"
+            "Dev7studios\\Chip\\": "src/php",
+            "Dev7studios\\Chip\\Laravel\\": "src/laravel"
         }
     },
     "autoload-dev": {

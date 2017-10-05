@@ -1,6 +1,6 @@
 <?php
 
-namespace SaaSBilling\Laravel\Events;
+namespace Dev7studios\Chip\Laravel\Events;
 
 class SubscriptionChanged
 {

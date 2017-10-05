@@ -1,11 +1,11 @@
 <?php
 
-namespace SaaSBilling\Laravel;
+namespace Dev7studios\Chip\Laravel;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
-class SaaSBillingServiceProvider extends ServiceProvider
+class ChipServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -31,10 +31,10 @@ class SaaSBillingServiceProvider extends ServiceProvider
     {
         // If the routes have not been cached, we will include them in a route group
         // so that all of the routes will be conveniently registered to the given
-        // controller namespace. After that we will load the Spark routes file.
+        // controller namespace. After that we will load the Chip routes file.
         if (!$this->app->routesAreCached()) {
             Route::group([
-                'namespace' => 'SaaSBilling\Laravel\Http\Controllers',
+                'namespace' => 'Dev7studios\Chip\Laravel\Http\Controllers',
             ], function ($router) {
                 require __DIR__ . '/Http/routes.php';
             });
@@ -48,7 +48,7 @@ class SaaSBillingServiceProvider extends ServiceProvider
      */
     protected function loadViews()
     {
-        $this->loadViewsFrom(__DIR__ . '/resources/views', 'saas-billing');
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'chip');
     }
 
     /**
@@ -59,8 +59,8 @@ class SaaSBillingServiceProvider extends ServiceProvider
     protected function publishConfig()
     {
         $this->publishes([
-            __DIR__ . '/config/saas-billing.php' => config_path('saas-billing.php'),
-        ], 'saas-billing');
+            __DIR__ . '/config/chip.php' => config_path('chip.php'),
+        ], 'chip');
     }
 
     /**
@@ -71,8 +71,8 @@ class SaaSBillingServiceProvider extends ServiceProvider
     protected function publishViews()
     {
         $this->publishes([
-            __DIR__ . '/resources/views' => resource_path('views/vendor/saas-billing'),
-        ], 'saas-billing-views');
+            __DIR__ . '/resources/views' => resource_path('views/vendor/chip'),
+        ], 'chip-views');
     }
 
     /**
@@ -83,8 +83,8 @@ class SaaSBillingServiceProvider extends ServiceProvider
     protected function publishAssets()
     {
         $this->publishes([
-            __DIR__ . '/../js/components' => resource_path('assets/js/vendor/saas-billing'),
-        ], 'saas-billing-components');
+            __DIR__ . '/../js/components' => resource_path('assets/js/vendor/chip'),
+        ], 'chip-components');
     }
 
     /**
