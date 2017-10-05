@@ -1,10 +1,10 @@
 {
-  "name": "saas-billing",
-  "description": "A set of components for creating a billing UI powered by Stripe",
-  "version": "1.0.2",
+  "name": "chip",
+  "description": "A simple set of components for creating billing UI powered by Stripe",
+  "version": "1.0.0",
   "author": "Dev7studios <gilbert@dev7studios.co>",
   "license" : "GPL-3.0",
-  "main": "dist/saas-billing.js",
+  "main": "dist/chip.js",
   "module": "src/js/lib.js",
   "scripts": {
     "lib:dev": "cross-env NODE_ENV=development webpack --config build/webpack.lib.js --watch --progress --hide-modules",
