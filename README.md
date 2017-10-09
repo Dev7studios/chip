@@ -15,7 +15,7 @@ Video demo:
 
 ## Docs
 
-To get started head on over to [our docs](https://gilbitron.gitbooks.io/saas-billing/).
+To get started head on over to [our docs](https://chipbilling.com/docs).
 
 ## Licensing
 
@@ -27,7 +27,7 @@ If you are creating an open source application under a license compatible with t
 
 If you want to use Chip to develop commercial sites, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. Purchase a Chip Commercial License at [chipbilling.com](https://chipbilling.com/).
 
-[Read more about Chip licensing](https://gilbitron.gitbooks.io/saas-billing/licensing.html)
+[Read more about Chip licensing](https://chipbilling.com/docs/licensing)
 
 ## Credits
 
