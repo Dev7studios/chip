@@ -11,7 +11,7 @@ Chip was created to be a lightweight alternative to [Laravel Spark](https://spar
 
 Video demo:
 
-[![Chip Demo](http://img.youtube.com/vi/lTiYD7hLNv0/maxresdefault.jpg)](https://youtu.be/lTiYD7hLNv0)
+[![Chip Demo](http://img.youtube.com/vi/ybJ0L2lPNA8/maxresdefault.jpg)](https://youtu.be/ybJ0L2lPNA8)
 
 ## Docs
 
