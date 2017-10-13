@@ -9,9 +9,6 @@
             "email": "gilbert@dev7studios.co"
         }
     ],
-    "require": {
-        "stripe/stripe-php": "5.*"
-    },
     "require-dev": {
         "laravel/framework": "^5.5",
         "laravel/cashier": "^7.0",
