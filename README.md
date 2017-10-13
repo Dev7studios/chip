@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Dev7studios/chip.svg?branch=master)](https://travis-ci.org/Dev7studios/chip) [![CircleCI](https://circleci.com/gh/Dev7studios/chip.svg?style=svg)](https://circleci.com/gh/Dev7studios/chip)
+
 # Chip
 
 Chip was created to be a lightweight alternative to [Laravel Spark](https://spark.laravel.com/). It is a drop-in subscription billing UI powered by Stripe and Vue.js components. It allows you to focus your time and energy on building your SaaS app rather than worrying about the complexities of the billing system.
