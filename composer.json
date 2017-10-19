@@ -27,9 +27,10 @@
         }
     },
     "extra": {
-    "laravel": {
-        "providers": [
-            "Dev7studios\\Chip\\Laravel\\ChipServiceProvider"
-        ]
+        "laravel": {
+            "providers": [
+                "Dev7studios\\Chip\\Laravel\\ChipServiceProvider"
+            ]
+        }
     }
 }
