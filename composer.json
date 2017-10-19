@@ -25,5 +25,12 @@
         "psr-4": {
             "Tests\\Laravel\\": "tests/laravel/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dev7studios\\Chip\\Laravel\\ChipServiceProvider"
+            ]
+        }
     }
 }
