@@ -15,40 +15,14 @@
 				</p>
 			</div>
 
-			<table class="table pricing-table" v-if="showPricingTable">
-				<tbody>
-				<tr v-for="plan in plans">
-					<td>
-						<div class="table-spacer"><strong>{{ plan.name }}</strong></div>
-					</td>
-					<td class="text-center">
-						<div class="table-spacer">
-							<ul class="features">
-								<li v-for="feature in plan.features">{{ feature }}</li>
-							</ul>
-						</div>
-					</td>
-					<td class="text-center">
-						<div class="table-spacer">
-							${{ plan.price }} {{ plan.interval }}
-							<span v-if="coupon">*</span>
-						</div>
-					</td>
-					<td class="text-right">
-						<a :href="routes.change_plan + '?plan_id=' + plan.id" class="btn"
-								:class="[isCurrentPlan(plan.id) ? 'btn-default' : 'btn-primary']"
-								:disabled="isCurrentPlan(plan.id)"
-								v-if="showChangeButton(plan.id)"
-								@click="confirmChange">{{ changeButtonText(plan.id) }}</a>
-
-						<div v-if="showUpgradeButton(plan.id)">
-							<button type="button" class="btn btn-default" disabled v-if="isCurrentPlan(plan.id)">Current Plan</button>
-							<stripe-upgrade :form-data="stripeForm" :action="routes.form_post_subscribe" text="Upgrade" :plan="plan" :coupon="coupon" v-else></stripe-upgrade>
-						</div>
-					</td>
-				</tr>
-				</tbody>
-			</table>
+			<div v-if="showPricingTable">
+				<list-view :routes="routes"
+						:stripe-form="stripeForm"
+						:plans="plans"
+						:subscription="subscription"
+						:coupon="coupon"
+						v-else></list-view>
+			</div>
 
 			<a :href="routes.cancel_subscription" class="btn btn-danger cancel-btn"
 					v-if="showCancelButton()"
@@ -90,7 +64,7 @@
 
 <script>
 	import _ from 'lodash';
-	import StripeUpgrade from './stripe/StripeUpgrade.vue';
+	import ListView from './PlanAndPricing/ListView.vue';
 
 	export default {
 		props: {
@@ -195,31 +169,6 @@
 					e.preventDefault();
 				}
 			},
-
-			showChangeButton(planId) {
-				return this.hasActiveSubscription && planId;
-			},
-			changeButtonText(planId) {
-				if (this.isCurrentPlan(planId)) {
-					return 'Current Plan';
-				}
-
-				return 'Change Plan';
-			},
-			confirmChange(e) {
-				if (e.target.getAttribute('disabled')) {
-					e.preventDefault();
-					return;
-				}
-
-				if (!confirm('Are you sure you want to change your subscription? You will be charged a prorated amount now, then the new rate going forward.')) {
-					e.preventDefault();
-				}
-			},
-
-			showUpgradeButton(planId) {
-				return !this.hasActiveSubscription && planId;
-			}
 		},
 
 		watch: {
@@ -229,7 +178,7 @@
 		},
 
 		components: {
-			'stripe-upgrade': StripeUpgrade,
+			'list-view': ListView,
 		}
 	}
 </script>
