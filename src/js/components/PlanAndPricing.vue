@@ -16,6 +16,13 @@
 			</div>
 
 			<div v-if="showPricingTable">
+				<column-view :routes="routes"
+							:stripe-form="stripeForm"
+							:plans="plans"
+							:subscription="subscription"
+							:coupon="coupon"
+							v-if="plans.length < listViewMinPlans"></column-view>
+
 				<list-view :routes="routes"
 						:stripe-form="stripeForm"
 						:plans="plans"
@@ -39,6 +46,8 @@
 	.pricing-table {
 		margin-bottom: 0;
 	}
+	.pricing-table-column-view th,
+	.pricing-table-column-view td { text-align: center; }
 	.pricing-table tbody tr td {
 		border: 0;
 	}
@@ -64,6 +73,7 @@
 
 <script>
 	import _ from 'lodash';
+	import ColumnView from './PlanAndPricing/ColumnView.vue';
 	import ListView from './PlanAndPricing/ListView.vue';
 
 	export default {
@@ -99,6 +109,10 @@
 			coupon: {
 				type: String,
 				default: '',
+			},
+			listViewMinPlans: {
+				type: Number,
+				default: 4,
 			}
 		},
 
@@ -178,6 +192,7 @@
 		},
 
 		components: {
+			'column-view': ColumnView,
 			'list-view': ListView,
 		}
 	}
