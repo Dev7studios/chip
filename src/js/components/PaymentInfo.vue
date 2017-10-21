@@ -23,7 +23,7 @@
 </style>
 
 <script>
-	import StripeUpgrade from './stripe/StripeUpgrade.vue';
+	import StripeUpgrade from './Stripe/StripeUpgrade.vue';
 
 	export default {
 		props: {
