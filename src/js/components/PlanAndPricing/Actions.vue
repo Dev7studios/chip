@@ -59,6 +59,13 @@
 			},
 			hasActiveSubscription() {
 				return this.hasSubscription && !this.subscriptionIsExpired;
+			},
+			subscriptionIsExpired() {
+				if (!this.hasSubscription) {
+					return false;
+				}
+
+				return this.subscription.cancelled && !this.subscription.on_grace_period;
 			}
 		},
 
