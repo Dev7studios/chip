@@ -13,9 +13,9 @@ export default {
 		"user_email":"user@product.com"
 	},
 	"plans": [
-		{"id": "product-9-monthly",  "name": "Freelancer", "price": 9,  "interval": "monthly", "features": ["1 user"]},
-		{"id": "product-29-monthly", "name": "Small Team", "price": 29, "interval": "monthly", "features": ["5 users"]},
-		{"id": "product-59-monthly", "name": "Big Team",   "price": 59, "interval": "monthly", "features": ["15 users"]}
+		{"id": "product-9-monthly",  "name": "Freelancer", "price": 9,  "interval": "monthly", "features": ["1 user", "Unlimited Awesome", "Great Support"]},
+		{"id": "product-29-monthly", "name": "Small Team", "price": 29, "interval": "monthly", "features": ["5 users", "Unlimited Awesome", "Great Support"]},
+		{"id": "product-59-monthly", "name": "Big Team",   "price": 59, "interval": "monthly", "features": ["15 users", "Unlimited Awesome", "Great Support"]}
 	],
 	"subscription": {},
 	"payment_info": {},
