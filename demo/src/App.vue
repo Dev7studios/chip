@@ -14,11 +14,12 @@
 					<div class="text-center" style="margin-bottom: 40px;">
 						<p>Select a state:</p>
 						<div class="state-switcher btn-group" role="group">
-							<button type="button" class="btn btn-default" :class="{'active': currentState == 'default'}"    @click="stateDefault">Default</button>
-							<button type="button" class="btn btn-default" :class="{'active': currentState == 'coupon'}"    @click="stateCoupon">Coupon Applied</button>
-							<button type="button" class="btn btn-default" :class="{'active': currentState == 'subscribed'}" @click="stateSubscribed">Subscribed</button>
-							<button type="button" class="btn btn-default" :class="{'active': currentState == 'cancelled'}"  @click="stateCancelled">Cancelled</button>
-							<button type="button" class="btn btn-default" :class="{'active': currentState == 'expired'}"    @click="stateExpired">Expired</button>
+							<button type="button" class="btn btn-default" :class="{'active': currentState == 'default'}"      @click="stateDefault">Default</button>
+							<button type="button" class="btn btn-default" :class="{'active': currentState == 'default-list'}" @click="stateDefaultListView">Default (List View)</button>
+							<button type="button" class="btn btn-default" :class="{'active': currentState == 'coupon'}"       @click="stateCoupon">Coupon Applied</button>
+							<button type="button" class="btn btn-default" :class="{'active': currentState == 'subscribed'}"   @click="stateSubscribed">Subscribed</button>
+							<button type="button" class="btn btn-default" :class="{'active': currentState == 'cancelled'}"    @click="stateCancelled">Cancelled</button>
+							<button type="button" class="btn btn-default" :class="{'active': currentState == 'expired'}"      @click="stateExpired">Expired</button>
 						</div>
 					</div>
 
@@ -58,6 +59,12 @@
 				this.billingInfo = _.cloneDeep(billingInfo);
 				this.currentState = 'default';
 			},
+			stateDefaultListView() {
+				var newBillingInfo = _.cloneDeep(billingInfo);
+				newBillingInfo.plans = this.morePlans();
+				this.billingInfo = newBillingInfo;
+				this.currentState = 'default-list';
+			},
 			stateCoupon() {
 				this.billingInfo = _.cloneDeep(billingInfo);
 				this.billingInfo.coupon = 'exmaple-coupon'
@@ -84,6 +91,15 @@
 				this.currentState = 'expired';
 			},
 
+			morePlans() {
+				return [
+					{"id": "product-9-monthly",   "name": "Freelancer", "price": 9,   "interval": "monthly", "features": ["1 user"]},
+					{"id": "product-29-monthly",  "name": "Small Team", "price": 29,  "interval": "monthly", "features": ["5 users"]},
+					{"id": "product-59-monthly",  "name": "Big Team",   "price": 59,  "interval": "monthly", "features": ["15 users"]},
+					{"id": "product-99-monthly",  "name": "Agency",     "price": 99,  "interval": "monthly", "features": ["50 users"]},
+					{"id": "product-199-monthly", "name": "Enterprise", "price": 199, "interval": "monthly", "features": ["150 users"]},
+				];
+			},
 			exampleSubscription(cancelled = false) {
 				return {
 					stripe_plan: 'product-29-monthly',

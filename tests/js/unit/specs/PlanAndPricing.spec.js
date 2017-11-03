@@ -27,13 +27,6 @@ describe('PlanAndPricing (default state)', () => {
 		assert.isTrue(vm.showPricingTable);
 	});
 
-	it('should show the upgrade button', () => {
-		const vm = mountPlanAndPricing(defaultState);
-
-		assert.isFalse(vm.showChangeButton(vm.plans[0].id));
-		assert.isNotFalse(vm.showUpgradeButton(vm.plans[0].id));
-	});
-
 	it('should not show the cancel button', () => {
 		const vm = mountPlanAndPricing(defaultState);
 
@@ -54,20 +47,6 @@ describe('PlanAndPricing (subscribed state)', () => {
 		const vm = mountPlanAndPricing(subscribedState);
 
 		assert.isTrue(vm.hasSubscription);
-	});
-
-	it('should show the change button', () => {
-		const vm = mountPlanAndPricing(subscribedState);
-
-		assert.isNotFalse(vm.showChangeButton(vm.plans[1].id));
-		assert.isFalse(vm.showUpgradeButton(vm.plans[1].id));
-	});
-
-	it('should show the current plan button', () => {
-		const vm = mountPlanAndPricing(subscribedState);
-
-		assert.isTrue(vm.isCurrentPlan(vm.plans[0].id));
-		assert.equal(vm.changeButtonText(vm.plans[0].id), 'Current Plan');
 	});
 
 	it('should show the cancel button', () => {
@@ -91,13 +70,6 @@ describe('PlanAndPricing (expired state)', () => {
 		const vm = mountPlanAndPricing(expiredState);
 
 		assert.isTrue(vm.showPricingTable);
-	});
-
-	it('should show the upgrade button', () => {
-		const vm = mountPlanAndPricing(expiredState);
-
-		assert.isFalse(vm.showChangeButton(vm.plans[0].id));
-		assert.isNotFalse(vm.showUpgradeButton(vm.plans[0].id));
 	});
 
 	it('should not show the cancel button', () => {
