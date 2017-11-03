@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'billing_route' => '/billing',
+    'billing_route' => env('CHIP_BILLING_ROUTE', '/billing'),
 
     /*
     |--------------------------------------------------------------------------
