@@ -14,7 +14,7 @@
 				</td>
 				<td class="text-center">
 					<div class="table-spacer">
-						${{ plan.price }} {{ plan.interval }}
+						{{ currency.symbol }}{{ plan.price }} {{ plan.interval }}
 						<span v-if="coupon">*</span>
 					</div>
 				</td>
@@ -23,7 +23,8 @@
 							:stripe-form="stripeForm"
 							:subscription="subscription"
 							:coupon="coupon"
-							:plan="plan"></actions>
+							:plan="plan"
+							:currency="currency"></actions>
 				</td>
 			</tr>
 		</tbody>
@@ -66,6 +67,10 @@
 			coupon: {
 				type: String,
 				default: '',
+			},
+			currency: {
+				type: Object,
+				required: true,
 			}
 		},
 

@@ -8,7 +8,7 @@
 		<tbody>
 			<tr>
 				<td v-for="plan in plans">
-					${{ plan.price }} {{ plan.interval }}
+					{{ currency.symbol }}{{ plan.price }} {{ plan.interval }}
 					<span v-if="coupon">*</span>
 				</td>
 			</tr>
@@ -25,7 +25,8 @@
 							:stripe-form="stripeForm"
 							:subscription="subscription"
 							:coupon="coupon"
-							:plan="plan"></actions>
+							:plan="plan"
+							:currency="currency"></actions>
 				</td>
 			</tr>
 		</tbody>
@@ -68,6 +69,10 @@
 			coupon: {
 				type: String,
 				default: '',
+			},
+			currency: {
+				type: Object,
+				required: true,
 			}
 		},
 
