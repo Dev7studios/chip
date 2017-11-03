@@ -38,12 +38,7 @@
 		props: {
 			routes: {
 				type: Object,
-				default: {
-					cancel_subscription: '',
-					resume_subscription: '',
-					change_plan: '',
-					form_post_subscribe: '',
-				}
+				required: true,
 			},
 			stripeForm: {
 				type: Object,
@@ -55,18 +50,11 @@
 			},
 			subscription: {
 				type: Object,
-				default() {
-					return {
-						stripe_plan: '',
-						cancelled: false,
-						on_grace_period: false,
-						ends_at: null,
-					}
-				},
+				required: true,
 			},
 			coupon: {
 				type: String,
-				default: '',
+				required: true,
 			},
 			currency: {
 				type: Object,
