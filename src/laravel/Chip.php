@@ -47,6 +47,11 @@ class Chip
         } catch (\Exception $e) {
         }
 
+        $currency = [
+            'symbol' => config('chip.currency.symbol', '$'),
+            'code'   => config('chip.currency.code', 'USD'),
+        ];
+
         return [
             'routes'       => [
                 'form_post_subscribe' => route('billing-subscribe'),
@@ -66,6 +71,7 @@ class Chip
             'payment_info' => $paymentInfo,
             'invoices'     => $invoices,
             'coupon'       => $coupon,
+            'currency'     => $currency,
         ];
     }
 }

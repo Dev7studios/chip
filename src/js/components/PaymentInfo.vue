@@ -4,7 +4,10 @@
 		<div class="panel-body">
 			<div v-if="hasPaymentInfo">
 				<div class="pull-right">
-					<stripe-upgrade :form-data="stripeForm" :action="routes.form_post_update" text="Update Details"></stripe-upgrade>
+					<stripe-upgrade text="Update Details"
+									:form-data="stripeForm"
+									:action="routes.form_post_update"
+									:currency="currency"></stripe-upgrade>
 				</div>
 				<div class="payment-info-spacer">
 					<p><strong>Card:</strong> {{ paymentInfo.card_brand }} ending in <strong>{{ paymentInfo.card_last_four }}</strong></p>
@@ -48,6 +51,15 @@
 						billing_state: '',
 						billing_zip: '',
 						billing_country: '',
+					}
+				},
+			},
+			currency: {
+				type: Object,
+				default() {
+					return {
+						symbol: '$',
+						code: 'USD'
 					}
 				},
 			}

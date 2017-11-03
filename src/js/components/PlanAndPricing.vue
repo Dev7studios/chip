@@ -4,7 +4,7 @@
 		<div class="panel-body">
 			<div class="alert alert-warning resume-alert" v-if="showResumeAlert">
 				<p>You have cancelled your subscription to the
-					<strong v-if="activePlan">{{ activePlan.name }} (${{ activePlan.price }} {{ activePlan.interval }})</strong> plan.
+					<strong v-if="activePlan">{{ activePlan.name }} ({{ currency.symbol }}{{ activePlan.price }} {{ activePlan.interval }})</strong> plan.
 				</p>
 				<p>The benefits of your subscription will continue until your current billing period ends on
 					<strong v-if="hasSubscription">{{ subscription.ends_at }}</strong>. You may resume your subscription at no
@@ -21,6 +21,7 @@
 							:plans="plans"
 							:subscription="subscription"
 							:coupon="coupon"
+							:currency="currency"
 							v-if="plans.length < listViewMinPlans"></column-view>
 
 				<list-view :routes="routes"
@@ -28,6 +29,7 @@
 						:plans="plans"
 						:subscription="subscription"
 						:coupon="coupon"
+						:currency="currency"
 						v-else></list-view>
 			</div>
 
@@ -109,6 +111,15 @@
 			coupon: {
 				type: String,
 				default: '',
+			},
+			currency: {
+				type: Object,
+				default() {
+					return {
+						symbol: '$',
+						code: 'USD'
+					}
+				},
 			},
 			listViewMinPlans: {
 				type: Number,

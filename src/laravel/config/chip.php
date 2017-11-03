@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'billing_route' => '/billing',
+    'billing_route' => env('CHIP_BILLING_ROUTE', '/billing'),
 
     /*
     |--------------------------------------------------------------------------
@@ -45,4 +45,18 @@ return [
             'features' => ['15 users'],
         ],
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Currency
+    |--------------------------------------------------------------------------
+    |
+    | Tweak which currency is displayed in the Chip components.
+    |
+    */
+
+    'currency' => [
+        'symbol' => env('CHIP_CURRENCY_SYMBOL', '$'),
+        'code'   => env('CHIP_CURRENCY_CODE', 'USD'),
+    ]
 ];

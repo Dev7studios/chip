@@ -14,7 +14,7 @@
 				</td>
 				<td class="text-center">
 					<div class="table-spacer">
-						${{ plan.price }} {{ plan.interval }}
+						{{ currency.symbol }}{{ plan.price }} {{ plan.interval }}
 						<span v-if="coupon">*</span>
 					</div>
 				</td>
@@ -23,7 +23,8 @@
 							:stripe-form="stripeForm"
 							:subscription="subscription"
 							:coupon="coupon"
-							:plan="plan"></actions>
+							:plan="plan"
+							:currency="currency"></actions>
 				</td>
 			</tr>
 		</tbody>
@@ -37,12 +38,7 @@
 		props: {
 			routes: {
 				type: Object,
-				default: {
-					cancel_subscription: '',
-					resume_subscription: '',
-					change_plan: '',
-					form_post_subscribe: '',
-				}
+				required: true,
 			},
 			stripeForm: {
 				type: Object,
@@ -54,18 +50,15 @@
 			},
 			subscription: {
 				type: Object,
-				default() {
-					return {
-						stripe_plan: '',
-						cancelled: false,
-						on_grace_period: false,
-						ends_at: null,
-					}
-				},
+				required: true,
 			},
 			coupon: {
 				type: String,
-				default: '',
+				required: true,
+			},
+			currency: {
+				type: Object,
+				required: true,
 			}
 		},
 

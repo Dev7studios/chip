@@ -21,7 +21,7 @@
 	import Vue from 'vue';
 
 	export default {
-		props: ['formData', 'action', 'text', 'plan', 'coupon'],
+		props: ['formData', 'action', 'text', 'plan', 'coupon', 'currency'],
 
 		data() {
 			return {
@@ -42,6 +42,7 @@
 				key: this.formData.stripe_key,
 				name: this.formData.app_name,
 				email: this.formData.user_email,
+				currency: this.currency.code,
 				locale: 'auto',
 				zipCode: true,
 				billingAddress: true,

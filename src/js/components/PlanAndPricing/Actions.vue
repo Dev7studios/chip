@@ -8,7 +8,13 @@
 
 		<div v-if="showUpgradeButton(plan.id)">
 			<button type="button" class="btn btn-default" disabled v-if="isCurrentPlan(plan.id)">Current Plan</button>
-			<stripe-upgrade :form-data="stripeForm" :action="routes.form_post_subscribe" text="Upgrade" :plan="plan" :coupon="coupon" v-else></stripe-upgrade>
+			<stripe-upgrade text="Upgrade"
+							:form-data="stripeForm"
+							:action="routes.form_post_subscribe"
+							:plan="plan"
+							:coupon="coupon"
+							:currency="currency"
+							v-else></stripe-upgrade>
 		</div>
 	</div>
 </template>
@@ -21,12 +27,7 @@
 		props: {
 			routes: {
 				type: Object,
-				default: {
-					cancel_subscription: '',
-					resume_subscription: '',
-					change_plan: '',
-					form_post_subscribe: '',
-				}
+				required: true,
 			},
 			stripeForm: {
 				type: Object,
@@ -34,20 +35,17 @@
 			},
 			subscription: {
 				type: Object,
-				default() {
-					return {
-						stripe_plan: '',
-						cancelled: false,
-						on_grace_period: false,
-						ends_at: null,
-					}
-				},
+				required: true,
 			},
 			coupon: {
 				type: String,
 				default: '',
 			},
 			plan: {
+				type: Object,
+				required: true,
+			},
+			currency: {
 				type: Object,
 				required: true,
 			}
