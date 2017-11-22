@@ -2,6 +2,7 @@
 
 namespace Dev7studios\Chip\Laravel;
 
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,6 +17,7 @@ class ChipServiceProvider extends ServiceProvider
     {
         $this->defineRoutes();
         $this->loadViews();
+        $this->registerListeners();
 
         $this->publishConfig();
         $this->publishViews();
@@ -49,6 +51,24 @@ class ChipServiceProvider extends ServiceProvider
     protected function loadViews()
     {
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'chip');
+    }
+
+    /**
+     * Register event listeners
+     */
+    protected function registerListeners()
+    {
+        $listen = config('chip.listeners');
+
+        if (!is_array($listen) || empty($listen)) {
+            return;
+        }
+
+        foreach ($listen as $event => $listeners) {
+            foreach ($listeners as $listener) {
+                Event::listen($event, $listener);
+            }
+        }
     }
 
     /**

@@ -58,5 +58,21 @@ return [
     'currency' => [
         'symbol' => env('CHIP_CURRENCY_SYMBOL', '$'),
         'code'   => env('CHIP_CURRENCY_CODE', 'USD'),
-    ]
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Listeners
+    |--------------------------------------------------------------------------
+    |
+    | Register Chip specific event listeners. Override these if you want to 
+    | disable them or specify your own listeners.
+    |
+    */
+
+    'listeners' => [
+        'Dev7studios\Chip\Laravel\Events\InvoicePaymentSucceeded' => [
+            'Dev7studios\Chip\Laravel\Listeners\SendInvoicePaidNotification',
+        ],
+    ],
 ];
