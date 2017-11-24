@@ -62,10 +62,32 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Billing Address
+    |--------------------------------------------------------------------------
+    |
+    | Your company billing address. Used in invoices.
+    |
+    */
+
+    'billing_address' => [
+        'name'           => '',
+        'address_line_1' => '',
+        'address_line_2' => '',
+        'city'           => '',
+        'state'          => '',
+        'country'        => '',
+        'zip'            => '',
+        'phone'          => '',
+        'url'            => '',
+        'vat'            => '',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Listeners
     |--------------------------------------------------------------------------
     |
-    | Register Chip specific event listeners. Override these if you want to 
+    | Register Chip specific event listeners. Override these if you want to
     | disable them or specify your own listeners.
     |
     */
