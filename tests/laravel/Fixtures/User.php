@@ -4,10 +4,11 @@ namespace Tests\Laravel\Fixtures;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Cashier\Billable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Billable;
+    use Billable, Notifiable;
 
     public $email = '';
     public $subscriptions;
@@ -43,5 +44,10 @@ class User extends Authenticatable
     public function updateCard($token)
     {
 
+    }
+
+    public function findInvoice($id)
+    {
+        return new Invoice($this, $id);
     }
 }
