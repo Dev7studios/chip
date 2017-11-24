@@ -3,8 +3,10 @@
 namespace Dev7studios\Chip\Laravel\Listeners;
 
 use Dev7studios\Chip\Laravel\Events\InvoicePaymentSucceeded;
+use Dev7studios\Chip\Laravel\Notifications\InvoicePaid;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Notification;
 
 class SendInvoicePaidNotification
 {
@@ -26,5 +28,6 @@ class SendInvoicePaidNotification
      */
     public function handle(InvoicePaymentSucceeded $event)
     {
+        Notification::send($event->user, new InvoicePaid($event->user, $event->invoice));
     }
 }
