@@ -58,5 +58,43 @@ return [
     'currency' => [
         'symbol' => env('CHIP_CURRENCY_SYMBOL', '$'),
         'code'   => env('CHIP_CURRENCY_CODE', 'USD'),
-    ]
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Billing Address
+    |--------------------------------------------------------------------------
+    |
+    | Your company billing address. Used in invoices.
+    |
+    */
+
+    'billing_address' => [
+        'name'           => '',
+        'address_line_1' => '',
+        'address_line_2' => '',
+        'city'           => '',
+        'state'          => '',
+        'country'        => '',
+        'zip'            => '',
+        'phone'          => '',
+        'url'            => '',
+        'vat'            => '',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Listeners
+    |--------------------------------------------------------------------------
+    |
+    | Register Chip specific event listeners. Override these if you want to
+    | disable them or specify your own listeners.
+    |
+    */
+
+    'listeners' => [
+        'Dev7studios\Chip\Laravel\Events\InvoicePaymentSucceeded' => [
+            'Dev7studios\Chip\Laravel\Listeners\SendInvoicePaidNotification',
+        ],
+    ],
 ];
