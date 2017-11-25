@@ -1,7 +1,7 @@
 {
   "name": "chip",
   "description": "A simple set of components for creating billing UI powered by Stripe",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Dev7studios <gilbert@dev7studios.co>",
   "license" : "GPL-3.0",
   "main": "dist/chip.js",
