@@ -1,3 +1,7 @@
+# DISCONTINUED
+
+> As of November 2018 Chip has been discontinued. It will remain here as a free open source project but will switch to an MIT license and no longer be actively maintained.
+
 [![Build Status](https://travis-ci.org/Dev7studios/chip.svg?branch=master)](https://travis-ci.org/Dev7studios/chip) [![CircleCI](https://circleci.com/gh/Dev7studios/chip.svg?style=svg)](https://circleci.com/gh/Dev7studios/chip)
 
 # Chip
@@ -8,28 +12,6 @@ Chip was created to be a lightweight alternative to [Laravel Spark](https://spar
 * Front-end components powered by [Vue.js](https://vuejs.org/)
 * Uses [Stripe Checkout](https://stripe.com/checkout) for a world-class payment flow
 * [Bootstrap](http://getbootstrap.com/) compatible styling out of the box
-
-## Demo
-
-Video demo:
-
-[![Chip Demo](http://img.youtube.com/vi/ybJ0L2lPNA8/maxresdefault.jpg)](https://youtu.be/ybJ0L2lPNA8)
-
-## Docs
-
-To get started head on over to [our docs](https://chipbilling.com/docs).
-
-## Licensing
-
-### Open Source License
-
-If you are creating an open source application under a license compatible with the GNU GPL license v3, you may use Chip under the terms of the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
-
-### Commercial License
-
-If you want to use Chip to develop commercial sites, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. Purchase a Chip Commercial License at [chipbilling.com](https://chipbilling.com/).
-
-[Read more about Chip licensing](https://chipbilling.com/docs/licensing)
 
 ## Credits
 
