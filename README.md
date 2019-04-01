@@ -13,6 +13,10 @@ Chip was created to be a lightweight alternative to [Laravel Spark](https://spar
 * Uses [Stripe Checkout](https://stripe.com/checkout) for a world-class payment flow
 * [Bootstrap](http://getbootstrap.com/) compatible styling out of the box
 
+## Docs
+
+The docs can be found [here](https://github.com/Dev7studios/chipbilling.com/tree/master/resources/docs).
+
 ## Credits
 
 Chip was created by [Gilbert Pellegrom](https://gilbitron.me) from
