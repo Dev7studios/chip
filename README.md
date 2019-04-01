@@ -15,7 +15,7 @@ Chip was created to be a lightweight alternative to [Laravel Spark](https://spar
 
 ## Docs
 
-The docs can be found [here](https://github.com/Dev7studios/chipbilling.com/tree/master/resources/docs).
+The docs can be found [here](https://github.com/Dev7studios/chip/tree/master/docs).
 
 ## Credits
 
